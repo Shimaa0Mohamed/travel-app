@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600&family=Lobster&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    
+    
+  </head>
+<body>
+  <div class="container" id="container">
+    <div class="headline">
+        travel App
+      </div>
+    <div class="main">
+       <form class="form" action="#" >
+        <span class="text-center">BOOK A JOURNY</span>
+        <div class="input-container">
+        <input type="text" id="userCity" placeholder="example:london" required><br>
+      </div>
+      <div class="input-container">
+       <input type="date" id="datee" onblur="Client.datee()"  required><br>from:
+      <div class="input-container">
+       <input type="date" id="endDatee" onblur="Client.endDatee()"  required><br>to:
+        </div>
+      </div>
+        <!--i use  event.preventDefault to stop refresh the page on submit click ..-->
+      <button id="generate" type="submit" onclick=" event.preventDefault()" onsubmit="event.preventDefault()"> Generate </button>
+      </form>
+      <div class="client">
+         <span id="dataA"> </span>
+         <span id="dataB"></span>
+         <span id="dataC"></span>
+        <br> <div id="dataD"></div>
+    </div>
+    </div>
+    <hr id="hr">
+    <div class="imagee" id="imagee">
+      <img id="a"/>
+      <img id="b"/><br>
+      <img id="c"/>
+
+    </div>
+
+</div>
+<script>
+  // Check that service workers are supported
+  if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+      });
+  }
+ </script>
+</body>
+</html>
